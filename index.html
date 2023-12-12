@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    <title>PA#3</title>
+    <style>
+        body {
+            background-color: #EEEEEE;
+        }
+    </style>
+
+    <script src="./Utils/trackball-rotator.js"></script>
+    <script src="./Utils/m4.js"></script>
+    <script src="./shader.gpu"></script>
+    <script src="./main.js"></script>
+
+</head>
+
+<body onload="init()">
+
+    <h2>Continuous Topographic Surface of Cassini</h2>
+    <h2> with "Trackball" Mouse Rotation</h2>
+
+    <p id="message">Drag your mouse on the cube to rotate it.<br>
+        (On a touch screen, you can use your finger.)</p>
+
+    <label for="numU">Number of divisions by U</label>
+    <input type="range" name="numU" id="numU" min="10" max="100" step="1" value='50'><br>
+    <label for="numZ">Number of divisions by Z</label>
+    <input type="range" name="numZ" id="numZ" min="1" max="10" step="1" value='10'>
+    <div>
+        <label for="red">Red</label>
+        <input type="number" name="red" id="red" min="0" max="1" step="0.05" value="0.5">
+        <label for="green">Green</label>
+        <input type="number" name="green" id="green" min="0" max="1" step="0.05" value="0.4">
+        <label for="blue">Blue</label>
+        <input type="number" name="blue" id="blue" min="0" max="1" step="0.05" value="0.2">
+    </div>
+
+    <div id="canvas-holder">
+        <canvas width="600" height="600" id="webglcanvas" style="background-color:red"></canvas>
+    </div>
+
+
+</body>
+
+</html>
