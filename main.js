@@ -74,15 +74,15 @@ function draw() {
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
     /* Set the values of the projection transformation */
-    // let projection = m4.perspective(Math.PI / 8, 1, 8, 12);
-    const projVal = 17;
-    let projection = m4.orthographic(-projVal, projVal, -projVal, projVal, -projVal, projVal);
+    let projection = m4.perspective(Math.PI / 8, 1, 8, 12);
+    // const projVal = 17;
+    // let projection = m4.orthographic(-projVal, projVal, -projVal, projVal, -projVal, projVal);
 
     /* Get the view matrix from the SimpleRotator object.*/
     let modelView = spaceball.getViewMatrix();
 
     let rotateToPointZero = m4.axisRotation([0.707, 0.707, 0], 0.7);
-    let translateToPointZero = m4.translation(0, 0, -5);
+    let translateToPointZero = m4.translation(0, 0, -10);
 
     let matAccum0 = m4.multiply(rotateToPointZero, modelView);
     let matAccum1 = m4.multiply(translateToPointZero, matAccum0);
@@ -142,7 +142,7 @@ function c(z) {
 }
 
 const a = 8
-const scaler = 1;
+const scaler = 0.1;
 
 function cassiniVertex(u, z) {
     // console.log(r(u, z))
