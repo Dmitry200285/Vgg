@@ -101,6 +101,13 @@ function CreateSurfaceData() {
             vertexList.push(...vertex)
         }
     }
+    for (let z = -3; z < MAX_Z; z += STEP_Z) {
+    for (let u = 0; u < MAX_U; u += STEP_U) {
+        
+            let vertex = cassiniVertex(u, z)
+            vertexList.push(...vertex)
+        }
+    }
     // console.log(vertexList)
     return vertexList;
 }
